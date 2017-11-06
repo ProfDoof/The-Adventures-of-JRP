@@ -1,5 +1,6 @@
 #include <list>
 
+
 class Character{
 	private:
 		int hitpoints;
@@ -8,6 +9,8 @@ class Character{
 		list<Item> inventory;
 
 	public:
+		//Constructor
+		Character(int hp, int at, int de) : hitpoints(hp), atkpoints(at), defpoints(de) {}
 		//setters and getters for the things
 		int ATK() const;
 		void ATK(int input);

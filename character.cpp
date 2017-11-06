@@ -1,3 +1,7 @@
+#include "item.h"
+#include "item.cpp"
+#include "character.h"
+using namespace std;
 //setters and getters for the things
 int ATK() const
 {
@@ -51,4 +55,10 @@ void Attack(Character* enemy)
 	enemyCurrent -= dmg;
 	this->HP(current);
 	enemy.HP(enemyCurrent);
+}
+
+//testing code
+int main()
+{
+
 }
