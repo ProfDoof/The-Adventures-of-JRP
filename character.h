@@ -1,5 +1,5 @@
 #include <list>
-
+using namespace std;
 
 class Character{
 	private:
@@ -16,12 +16,12 @@ class Character{
 		void ATK(int input);
 
 		int DEF() const;
-		void DEF();
+		void DEF(int input);
 
 		int HP() const;
-		void HP();
+		void HP(int input);
 
-		void AddToInventory(Item* push);
+		void AddToInventory(Item push);
 
 		//functions
 		void Attack(Character* enemy);

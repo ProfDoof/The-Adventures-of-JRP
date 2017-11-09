@@ -2,6 +2,8 @@
 #include <string>
 using namespace std;
 
+class Character;
+
 class Item {
 	private:
 		string _Name;
@@ -10,11 +12,10 @@ class Item {
 		int _Healing;
 		
 	public:
-		Item(string Nam, string Desc, int Dam, int Heal) {}
-		~Item() {}
+		Item(string Nam, string Desc, int Dam, int Heal) : _Name(Nam), _Description(Desc), _Damage(Dam), _Healing(Heal)
+		~Item();
 		
-		void Use(Curio*);
-		void Use(Character*);
+		void Use(Character* ent);
 		
 		//Getters and Setters
 		void Name(string N) { _Name = N; }
@@ -25,4 +26,15 @@ class Item {
 		int Damage() const { return _Damage; }
 		void Healing(int H) { _Healing = H; }
 		int Healing() const { return _Healing; }
+		class Error {
+			private:
+				string desc;
+			public:
+				Error(string description) : desc(description) {}
+		};
+};
+
+class Curio {
+	private:
+		int something
 };

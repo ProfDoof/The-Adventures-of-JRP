@@ -1,39 +1,39 @@
-#include "item.h"
-#include "item.cpp"
+#include "Item.h"
+#include "Item.cpp"
 #include "character.h"
 using namespace std;
 //setters and getters for the things
-int ATK() const
+int Character::ATK() const
 {
 	return atkpoints;
 }
 
-void ATK(int input)
+void Character::ATK(int input)
 {
 	atkpoints = input;
 }
 
-int DEF() const
+int Character::DEF() const
 {
 	return defpoints;
 }
 
-void DEF(int input)
+void Character::DEF(int input)
 {
 	defpoints = input;
 }
 
-int HP() const
+int Character::HP() const
 {
 	return hitpoints;
 }
 
-void HP(int input)
+void Character::HP(int input)
 {
 	hitpoints = input;
 }
 
-void AddToInventory(Item push)
+void Character::AddToInventory(Item push)
 {
 	for( int i = 0; i < invsize; i++ )
 	{
@@ -45,7 +45,7 @@ void AddToInventory(Item push)
 }
 
 //functions
-void Attack(Character* enemy)
+void Character::Attack(Character* enemy)
 {
 	int current = this->HP();
 	int enemyCurrent = enemy.HP();
