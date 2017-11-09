@@ -4,13 +4,13 @@ using namespace std;
 class Character{
 	private:
 		int hitpoints;
-		int atkpoints;
 		int defpoints;
+		int atkpoints;
 		list<Item> inventory;
 
 	public:
 		//Constructor
-		Character(int hp, int at, int de) : hitpoints(hp), atkpoints(at), defpoints(de) {}
+		Character(int hp, int de, int at) : hitpoints(hp), defpoints(de), atkpoints(at) {}
 		//setters and getters for the things
 		int ATK() const;
 		void ATK(int input);

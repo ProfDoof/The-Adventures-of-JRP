@@ -1,6 +1,3 @@
-#include "Item.h"
-#include "Item.cpp"
-#include "character.h"
 using namespace std;
 //setters and getters for the things
 int Character::ATK() const
@@ -51,8 +48,3 @@ void Character::Attack(Character* enemy)
 	enemy->HP(enemyCurrent);
 }
 
-//testing code
-int main()
-{
-
-}

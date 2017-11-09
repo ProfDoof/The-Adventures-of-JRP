@@ -12,10 +12,7 @@ class Item {
 		int _Healing;
 		
 	public:
-		Item(string Nam, string Desc, int Dam, int Heal) : _Name(Nam), _Description(Desc), _Damage(Dam), _Healing(Heal)
-		~Item();
-		
-		void Use(Character* ent);
+		Item(string Nam, string Desc, int Dam, int Heal) : _Name(Nam), _Description(Desc), _Damage(Dam), _Healing(Heal) {}
 		
 		//Getters and Setters
 		void Name(string N) { _Name = N; }
@@ -36,5 +33,5 @@ class Item {
 
 class Curio {
 	private:
-		int something
+		int something;
 };
