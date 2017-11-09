@@ -35,26 +35,20 @@ void Character::HP(int input)
 
 void Character::AddToInventory(Item push)
 {
-	for( int i = 0; i < invsize; i++ )
-	{
-		if( inventory[i] = NULL )
-		{
-			inventory[i] = push;
-		}
-	}
+	inventory.push_back(push);
 }
 
 //functions
 void Character::Attack(Character* enemy)
 {
 	int current = this->HP();
-	int enemyCurrent = enemy.HP();
-	int dmg = this->ATK() - enemy.DEF();
-	int enemyDmg = enemy.ATK() - this->DEF();
+	int enemyCurrent = enemy->HP();
+	int dmg = this->ATK() - enemy->DEF();
+	int enemyDmg = enemy->ATK() - this->DEF();
 	current -= enemyDmg;
 	enemyCurrent -= dmg;
 	this->HP(current);
-	enemy.HP(enemyCurrent);
+	enemy->HP(enemyCurrent);
 }
 
 //testing code
