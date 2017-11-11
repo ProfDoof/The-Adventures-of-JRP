@@ -1,6 +1,5 @@
 class Room{
 	private:
-<<<<<<< HEAD
 		Character* Adventurer;
 		Enemy* Monster;//
 		Curio* Puzzle;//
@@ -36,12 +35,3 @@ class Room{
 
 
 };
-=======
-		Item* ItemInRoom;
-		Character* Adventurer;
-		Enemy* Monster;
-		Curio* Puzzle;
-	public:
-		
-}
->>>>>>> 9e60df95fb3c2dbac6548d9ab23a2e8a823cd308
