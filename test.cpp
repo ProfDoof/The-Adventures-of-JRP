@@ -1,29 +1,11 @@
 //test.cpp
 #include <iostream>
-#ifndef INCITEM
 #include "item.h"
-#define INCITEM
-#endif
-#ifndef INCCHARACTER
 #include "character.h"
-#define INCCHARACTER
-#endif
-#ifndef INCENEMY
 #include "enemy.h"
-#define INCENEMY
-#endif
-#ifndef INCROOM
 #include "room.h"
-#define INCROOM
-#endif
-#ifndef INCDUNGEON
 #include "dungeon.h"
-#define INCDUNGEON
-#endif
-#ifndef INCGAME
 #include "game.h"
-#define INCGAME
-#endif
 
 
 //this will be a factory

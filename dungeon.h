@@ -6,7 +6,7 @@ class Dungeon{
 	private:
 		Room** Map;
 	public:
-
+		Dungeon();
 };
 
 #endif
