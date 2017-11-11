@@ -31,13 +31,10 @@ string Enemy::DefeatLine() const
 
 Enemy* Enemy::createEnemy(int type)
 {
-<<<<<<< HEAD
 	if(type == 0)
 		return NULL;
 	else if(type == 1)
-=======
-	if(type == 1)
->>>>>>> 9e60df95fb3c2dbac6548d9ab23a2e8a823cd308
+
 		return new Guard(50,20,30,"","","Guard");
 	else if(type == 2)
 		return new Skeleton(1,1,1,"","","Skeleton");
@@ -63,9 +60,6 @@ Enemy* Enemy::createEnemy(int type)
 		return new Reeves(40,60,60,"","","Court Alchemist Reeves");
 	else if(type == 13)
 		return new StJohn(50,50,40,"","","Cleric St. John");
-<<<<<<< HEAD
 	
 	return NULL;
-=======
->>>>>>> 9e60df95fb3c2dbac6548d9ab23a2e8a823cd308
 }

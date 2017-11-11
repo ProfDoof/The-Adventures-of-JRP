@@ -7,25 +7,19 @@
 #include "character.cpp"
 #include "enemy.h"
 #include "enemy.cpp"
-<<<<<<< HEAD
 #include "room.h"
 #include "room.cpp"
 #include "dungeon.h"
 #include "dungeon.cpp"
 #include "game.h"
 #include "game.cpp"
-=======
-#include "game.h"
-#include "game.cpp"
+
 
 //this will be a factory
-
->>>>>>> 9e60df95fb3c2dbac6548d9ab23a2e8a823cd308
 
 int main()
 {
 	Game JPR();
-<<<<<<< HEAD
 	Dungeon YourMap();
 	Room Base(2,"Testing Room", "This rooms only purpose is to have no purpose", 4);
 	Enemy* Villains[10];
@@ -60,22 +54,6 @@ int main()
 	cout << AKnife.Description() << endl;
 	cout << AKnife.Damage() << endl;
 	cout << AKnife.Healing() << endl;
-=======
-	Item knife("Knife", "Deals 4 damage to enemies", 4, 0);
-	cout << knife.Damage() << endl;
-	cout << knife.Name() << endl;
-	cout << knife.Description() << endl;
-	cout << knife.Healing() << endl;
-	Character person(100, 100, 100);
-	Character food(10,10,10);
-	Character* test;
-	test = Enemy::createEnemy(1);
-	cout << test->ATK() << endl;
-	cout << test->DEF() << endl;
-	cout << test->HP() << endl;
-	cout << food.ATK() << endl;
-	cout << food.DEF() << endl;
-	cout << food.HP() << endl;
->>>>>>> 9e60df95fb3c2dbac6548d9ab23a2e8a823cd308
+
 	return 0;
 }
