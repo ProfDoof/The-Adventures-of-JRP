@@ -15,15 +15,21 @@
 
 int main()
 {
+	Game JPR();
+	Item knife("Knife", "Deals 4 damage to enemies", 4, 0);
+	cout << knife.Damage() << endl;
+	cout << knife.Name() << endl;
+	cout << knife.Description() << endl;
+	cout << knife.Healing() << endl;
 	Character person(100, 100, 100);
 	Character food(10,10,10);
 	Character* test;
 	test = Enemy::createEnemy(1);
-	cout << test->ATK();
-	cout << test->DEF();
-	cout << test->HP();
-	cout << food.ATK();
-	cout << food.DEF();
-	cout << food.HP();
+	cout << test->ATK() << endl;
+	cout << test->DEF() << endl;
+	cout << test->HP() << endl;
+	cout << food.ATK() << endl;
+	cout << food.DEF() << endl;
+	cout << food.HP() << endl;
 	return 0;
 }

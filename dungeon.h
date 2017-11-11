@@ -1,0 +1,6 @@
+class Dungeon{
+	private:
+
+	public:
+		
+}
