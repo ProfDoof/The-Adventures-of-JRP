@@ -1,4 +1,5 @@
 #include "game.h"
+#include "room.h"
 #include <iostream>
 using namespace std;
 void Game::start()
