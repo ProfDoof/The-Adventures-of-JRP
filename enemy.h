@@ -1,91 +1,80 @@
-//this will be a factory
-class Enemy: public Character
-{
+class Enemy: public Character {
 	private:
 		//private constructor in the base and derived classes
+		string name;
 		string encount;
 		string defeat;
 	protected:
-		Enemy(int hp, int de, int at, string e, string d) : Character(hp, de, at), encount(e), defeat(d) {}
+		Enemy(int hp, int de, int at, string e, string d, string na) : 
+		    Character(hp, de, at), encount(e), defeat(d), name(na) {}
 	public:
 		//a static method of a class that returns an object of that class type.
 		static Enemy* createEnemy(int type);
 };
 
-class Guard: public Enemy
-{
+class Guard: public Enemy {
 	friend class Enemy;
-	Guard(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Guard(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class Skeleton: public Enemy
-{
+class Skeleton: public Enemy {
 	friend class Enemy;
-	Skeleton(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Skeleton(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class Slime: public Enemy
-{
+class Slime: public Enemy {
 	friend class Enemy;
-	Slime(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Slime(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class Slaver: public Enemy
-{
+class Slaver: public Enemy {
 	friend class Enemy;
-	Slaver(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Slaver(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class Zombie: public Enemy
-{
+class Zombie: public Enemy {
 	friend class Enemy;
-	Zombie(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Zombie(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class Wolf: public Enemy
-{
+class Wolf: public Enemy {
 	friend class Enemy;
-	Wolf(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Wolf(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class Byrd: public Enemy
-{
+class Byrd: public Enemy {
 	friend class Enemy;
-	Byrd(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Byrd(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class Slave: public Enemy
-{
+class Slave: public Enemy {
 	friend class Enemy;
-	Slave(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Slave(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class Rat: public Enemy
-{
+class Rat: public Enemy {
 	friend class Enemy;
-	Rat(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Rat(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class Pettit: public Enemy
-{
+class Pettit: public Enemy {
 	friend class Enemy;
-	Pettit(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Pettit(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class Reeves: public Enemy
-{
+class Reeves: public Enemy {
 	friend class Enemy;
-	Reeves(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Reeves(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class StJohn: public Enemy
-{
+class StJohn: public Enemy {
 	friend class Enemy;
-	StJohn(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	StJohn(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
-class Homer: public Enemy
-{
+class Homer: public Enemy {
 	friend class Enemy;
-	Homer(int hp, int de, int at, string e, string d) : Enemy(hp,de,at,e,d) {}
+	Homer(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
+
+	
