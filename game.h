@@ -4,7 +4,10 @@
 #include "room.h"
 class Game {
 	private:
+<<<<<<< HEAD
 		//Dungeon WIIA;
+=======
+>>>>>>> 9248026c51717271355077f461425c8897afa27d
         Dungeon* dung;
         static Game* g_instance;
         Game();
