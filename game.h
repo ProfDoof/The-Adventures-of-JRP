@@ -1,10 +1,18 @@
 #ifndef GAME_H
 #define GAME_H
+#include "dungeon.h"
 class Game {
 	private:
 		//Dungeon WIIA;
+        Dungeon dung;
+        static Game* g_instance;
+        Game();
 	public:
-		Game() {}
+        static Game* instance() {
+            if (!g_instance) 
+                g_instance = new Game();
+            return g_instance;
+        }
 
 		//Initializer for the entire game
 		void start();

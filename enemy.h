@@ -1,10 +1,7 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 #include <string>
-#ifndef INCCHARACTER
 #include "character.h"
-#define INCCHARACTER
-#endif
 
 class Enemy: public Character {
 	private:
