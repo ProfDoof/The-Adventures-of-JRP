@@ -4,9 +4,17 @@
 
 class Dungeon{
 	private:
-		Room*** Map;
+		    Room*** Map;
+        Character* player;
+        int northSouthIndex;
+        int eastWestIndex;
 	public:
-		Dungeon();
+        Dungeon();
+        Room* getCurrentRoom() const;
+        void move( char direction );
+        Character* getPlayer();
+    
+
 };
 
 #endif
