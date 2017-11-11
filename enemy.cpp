@@ -41,7 +41,6 @@ Enemy* Enemy::createEnemy(int type)
 	if(type == 0)
 		return NULL;
 	else if(type == 1)
-
 		return new Guard(50,20,30,"","","Guard");
 	else if(type == 2)
 		return new Skeleton(1,1,1,"","","Skeleton");
@@ -60,13 +59,15 @@ Enemy* Enemy::createEnemy(int type)
 	else if(type == 9)
 		return new Rat(2,0,6,"","","Mutated Rat");
 	else if(type == 10)
-		return new Homer(60,20,70,"","","Slave Driver Homer");
+		return new Homer(60,20,70,"","","Slave Master Homer");
 	else if(type == 11)
 		return new Pettit(100,40,40,"","","Royal Guard Pettit");
 	else if(type == 12)
 		return new Reeves(40,60,60,"","","Court Alchemist Reeves");
 	else if(type == 13)
 		return new StJohn(50,50,40,"","","Cleric St. John");
+	else if(type == 14)
+		return new Tanner(0,0,0,"","","Blacksmith Rich Tanner")
 	
 	return NULL;
 }

@@ -2,7 +2,7 @@
 #include "enemy.h"
 #include "character.h"
 using namespace std;
-Room::Room(int MonsterType, string RoomName, string RoomDesc, int dam)
+Room::Room(int MonsterType, string RoomName, string RoomDesc)
 {
 	Adventurer = NULL;
 	Monster = Enemy::createEnemy(MonsterType);
@@ -10,7 +10,6 @@ Room::Room(int MonsterType, string RoomName, string RoomDesc, int dam)
 	Visited = false;
 	Name = RoomName;
 	Desc = RoomDesc;
-	Damage = dam;
 }
 
 bool Room::visit() const
