@@ -1,3 +1,7 @@
+#include "room.h"
+#include "enemy.h"
+#include "character.h"
+using namespace std;
 Room::Room(int MonsterType, string RoomName, string RoomDesc, int dam)
 {
 	Adventurer = NULL;

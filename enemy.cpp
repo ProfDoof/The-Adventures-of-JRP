@@ -1,5 +1,12 @@
+#include "enemy.h"
+using namespace std;
+
 void Enemy::EnemyName(string input)
 {
+#ifndef INCLIST
+#include <list>
+#define INCLIST
+#endif
 	name = input;
 }
 

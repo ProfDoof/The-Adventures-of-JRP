@@ -1,10 +1,17 @@
+#ifndef ENEMY_H
+#define ENEMY_H
+#include <string>
+#ifndef INCCHARACTER
+#include "character.h"
+#define INCCHARACTER
+#endif
+
 class Enemy: public Character {
 	private:
 		//private constructor in the base and derived classes
-		string name;
-		string encount;
-		string defeat;
-		string name;
+        std::string encount;
+        std::string defeat;
+        std::string name;
 	protected:
 		Enemy(int hp, int de, int at, string e, string d, string na) : 
 		    Character(hp, de, at), encount(e), defeat(d), name(na) {}
@@ -87,4 +94,4 @@ class Homer: public Enemy {
 	friend class Enemy;
 	Homer(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
-
+#endif
