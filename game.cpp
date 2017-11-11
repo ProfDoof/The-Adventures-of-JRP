@@ -3,7 +3,7 @@
 using namespace std;
 void Game::start()
 {
-
+	dung = new Dungeon();
 }
 
 void Game::run()

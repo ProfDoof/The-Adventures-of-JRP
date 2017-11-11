@@ -13,7 +13,6 @@ class Room{
 		string Name;//
 		string Desc;//
 		list<Item> LooseItems;//
-		int Damage;//
 	public:
 		Room();
 		Room(int MonsterType, string RoomName, string RoomDesc, int dam);

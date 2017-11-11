@@ -4,7 +4,7 @@
 
 class Dungeon{
 	private:
-		Room** Map;
+		Room*** Map;
 	public:
 		Dungeon();
 };

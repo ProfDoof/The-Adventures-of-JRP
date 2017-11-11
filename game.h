@@ -3,8 +3,7 @@
 #include "dungeon.h"
 class Game {
 	private:
-		//Dungeon WIIA;
-        Dungeon dung;
+        Dungeon* dung;
         static Game* g_instance;
         Game();
 	public:
