@@ -1,18 +1,10 @@
-<<<<<<< HEAD
-#include "dungeon.h"
-
-using namespace std;
-
-Room* Dungeon::getCurrentRoom() const {
-    return map[northSouthIndex][eastWestIndex];
-=======
 #include "room.h"
 #include "enemy.h"
 #include "character.h"
 #include "dungeon.h"
 using namespace std;
 
-Dungeon::Dungeon()
+Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 {
 	Map = new Room** [8];
 	for( int i = 0; i < 8; i++ )
@@ -23,6 +15,7 @@ Dungeon::Dungeon()
 			Map[i][j] = NULL;
 		}
 	}
+
 
 	//Format is that you create a new room and then can push any items in that you want in that room.
 	//Row 0
@@ -82,5 +75,4 @@ Dungeon::Dungeon()
 	Map[7][7] = new Room(0,"Hallway","");
 	Map[7][8] = new Room(0,"Hallway","");
 	Map[7][9] = new Room(0,"Hallway",""); //Sword
->>>>>>> 9248026c51717271355077f461425c8897afa27d
 }

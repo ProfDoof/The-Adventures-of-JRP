@@ -14,7 +14,7 @@ int main()
 {
 	Game JPR();
 	Dungeon YourMap();
-	Room Base(2,"Testing Room", "This rooms only purpose is to have no purpose", 4);
+	Room Base(2,"Testing Room", "This rooms only purpose is to have no purpose");
 	Enemy* Villains[10];
 	Villains[0] = Enemy::createEnemy(1);
 	Villains[1] = Enemy::createEnemy(2);
@@ -40,7 +40,6 @@ int main()
 	cout << Base.roomname() << endl;
 	cout << Base.description() << endl;
 	cout << Base.visit() << endl;
-	cout << Base.Trap() << endl;
 	Character Adventurer(10,10,10);
 	Item AKnife("Knife","Can be used for cutting vegetables or can deal 4 damage",4,0);
 	cout << AKnife.Name() << endl;

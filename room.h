@@ -15,7 +15,7 @@ class Room{
 		list<Item> LooseItems;//
 	public:
 		Room();
-		Room(int MonsterType, string RoomName, string RoomDesc, int dam);
+		Room(int MonsterType, string RoomName, string RoomDesc);
 
 		bool visit() const;
 		void visit(bool input);
@@ -28,9 +28,6 @@ class Room{
 
 		void AddToFloor(Item ttt);
 		Item TakeFrom();
-
-		int Trap() const;
-		void Trap(int input);
 
 		Curio* LookAtCurio() const;
 		void ChangeCurio(Curio* input);

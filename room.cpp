@@ -55,16 +55,6 @@ Item Room::TakeFrom()
 }
 */
 
-int Room::Trap() const
-{
-	return Damage;
-}
-
-void Room::Trap(int input)
-{
-	Damage = input;
-}
-
 Curio* Room::LookAtCurio() const
 {
 	return Puzzle;
