@@ -1,4 +1,8 @@
+#ifndef CHARACTER_H
+#define CHARACTER_H
+#include "item.h"
 #include <list>
+
 using namespace std;
 
 class Character{
@@ -31,3 +35,4 @@ class Character{
 		/*void Attack(Character enemy);*/
 
 };
+#endif

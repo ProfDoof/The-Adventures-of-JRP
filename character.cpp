@@ -1,3 +1,5 @@
+
+#include "character.h"
 using namespace std;
 //setters and getters for the things
 int Character::ATK() const

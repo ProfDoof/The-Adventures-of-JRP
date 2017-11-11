@@ -1,4 +1,5 @@
-
+#ifndef GAME_H
+#define GAME_H
 class Game {
 	private:
 		//Dungeon WIIA;
@@ -12,3 +13,4 @@ class Game {
 		//Where we start destroying things
 		void end();
 };
+#endif

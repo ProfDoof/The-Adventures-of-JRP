@@ -1,18 +1,29 @@
 //test.cpp
 #include <iostream>
-#include <list>
-#include "Item.h"
-#include "Item.cpp"
+#ifndef INCITEM
+#include "item.h"
+#define INCITEM
+#endif
+#ifndef INCCHARACTER
 #include "character.h"
-#include "character.cpp"
+#define INCCHARACTER
+#endif
+#ifndef INCENEMY
 #include "enemy.h"
-#include "enemy.cpp"
+#define INCENEMY
+#endif
+#ifndef INCROOM
 #include "room.h"
-#include "room.cpp"
+#define INCROOM
+#endif
+#ifndef INCDUNGEON
 #include "dungeon.h"
-#include "dungeon.cpp"
+#define INCDUNGEON
+#endif
+#ifndef INCGAME
 #include "game.h"
-#include "game.cpp"
+#define INCGAME
+#endif
 
 
 //this will be a factory

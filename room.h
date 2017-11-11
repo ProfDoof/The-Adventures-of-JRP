@@ -1,3 +1,9 @@
+#ifndef ROOM_H
+#define ROOM_H
+#include "character.h"
+#include "enemy.h"
+#include "item.h"
+
 class Room{
 	private:
 		Character* Adventurer;
@@ -35,3 +41,4 @@ class Room{
 
 
 };
+#endif
