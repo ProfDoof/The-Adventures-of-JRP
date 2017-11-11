@@ -1,10 +1,11 @@
 #ifndef GAME_H
 #define GAME_H
 #include "dungeon.h"
+#include "room.h"
 class Game {
 	private:
 		//Dungeon WIIA;
-        Dungeon dung;
+        Dungeon* dung;
         static Game* g_instance;
         Game();
 	public:

@@ -3,17 +3,17 @@
 #include "room.h"
 
 class Dungeon{
-	private:
-		Room** map;
-        Character* player;
+      private:
+        Room ***map;
+        Character *player;
         int northSouthIndex;
         int eastWestIndex;
-	public:
-        Dungeon() : northSouthIndex(3), eastWestIndex(0) {};
+
+      public:
+        Dungeon() : northSouthIndex(3), eastWestIndex(0){};
         Room* getCurrentRoom() const;
-        void move( char direction );
-        Character* getPlayer();
-    
+        void move(char direction);
+        Character *getPlayer();
 };
 
 #endif
