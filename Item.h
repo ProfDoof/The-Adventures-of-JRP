@@ -31,3 +31,7 @@ class Item {
 		};
 };
 
+class Curio {
+	private:
+		int something;
+};
