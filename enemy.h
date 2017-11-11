@@ -1,6 +1,7 @@
 class Enemy: public Character {
 	private:
 		//private constructor in the base and derived classes
+		string name;
 		string encount;
 		string defeat;
 		string name;
@@ -87,4 +88,8 @@ class Homer: public Enemy {
 	Homer(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
 
+<<<<<<< HEAD
 	
+=======
+	
+>>>>>>> 9e60df95fb3c2dbac6548d9ab23a2e8a823cd308

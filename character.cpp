@@ -30,21 +30,32 @@ void Character::HP(int input)
 	hitpoints = input;
 }
 
+int Character::Score() const
+{
+	return score;
+}
+
+void Character::Score(int input)
+{
+	score = input;
+}
+
 void Character::AddToInventory(Item push)
 {
 	inventory.push_back(push);
 }
 
+
 //functions
-void Character::Attack(Character* enemy)
+/*void Character::Attack(Character enemy)
 {
 	int current = this->HP();
-	int enemyCurrent = enemy->HP();
-	int dmg = this->ATK() - enemy->DEF();
-	int enemyDmg = enemy->ATK() - this->DEF();
+	int enemyCurrent = enemy.HP();
+	int dmg = this->ATK() - enemy.DEF();
+	int enemyDmg = enemy.ATK() - this->DEF();
 	current -= enemyDmg;
 	enemyCurrent -= dmg;
+	enemy.HP(enemyCurrent);
 	this->HP(current);
-	enemy->HP(enemyCurrent);
-}
+}*/
 
