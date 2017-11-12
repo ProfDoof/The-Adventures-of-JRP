@@ -6,6 +6,7 @@ using namespace std;
 
 Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 {
+	player = new Character(10,10,10);
 	Map = new Room** [8];
 	for( int i = 0; i < 8; i++ )
 	{
@@ -75,4 +76,36 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Map[7][7] = new Room(0,"Hallway","");
 	Map[7][8] = new Room(0,"Hallway","");
 	Map[7][9] = new Room(0,"Hallway",""); //Sword
+}
+
+void Dungeon::move(char direction)
+{
+	if(direction == 'n')
+		northSouthIndex--;
+	else if(direction == 's')
+		northSouthIndex++;
+	else if(direction == 'e')
+		eastWestIndex++;
+	else if(direction == 'w')
+		eastWestIndex--;
+
+	if(Map[northSouthIndex][eastWestIndex]->currentEnemy())
+	{
+		char choice
+		cout << Map[northSouthIndex][eastWestIndex]->currentEnemy()->EncounterLine() << endl;
+		cout << "You are now in combat, you can either run(\"r\") or attack(\"a\")" << endl;
+		cin >> choice;
+		while(true)
+			if(choice == 'a')
+				//attack function???
+			if(choice == 'r')
+				if(direction == 'n')
+					northSouthIndex++;
+				else if(direction == 's')
+					northSouthIndex--;
+				else if(direction == 'e')
+					eastWestIndex--;
+				else if(direction == 'w')
+					eastWestIndex++;
+	}
 }
