@@ -5,7 +5,7 @@
 class Dungeon{
       private:
         Room ***Map;
-        Character *player;
+        Character* player;
         int northSouthIndex;
         int eastWestIndex;
 
@@ -13,7 +13,11 @@ class Dungeon{
         Dungeon();
         Room* getCurrentRoom() const { return Map[northSouthIndex][eastWestIndex];}
         void move(char direction);
-        Character *getPlayer();
+        Character* getPlayer();
+        int LRI() {return eastWestIndex;}
+        void LRI(int input) {eastWestIndex+=input;}
+        int TBI() {return northSouthIndex;}
+        void TBI(int input) {eastWestIndex+=input;}
 };
 
 #endif

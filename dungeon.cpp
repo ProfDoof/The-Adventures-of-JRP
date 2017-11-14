@@ -40,19 +40,19 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Map[2][8] = new Room(0,"Hallway","");
 	Map[2][9] = new Room(11,"Guard Post",""); //Helmet
 	//Row 3
-	Map[3][0] = new Room(0,"Hallway","");
-	Map[3][1] = new Room(0,"Hallway","");
-	Map[3][2] = new Room(0,"Hallway",""); ///Sword
-	Map[3][3] = new Room(8,"Hallway",""); //Apple
-	Map[3][4] = new Room(0,"Hallway","");
-	Map[3][5] = new Room(0,"Hallway","");
-	Map[3][6] = new Room(0,"Hallway",""); //Apple
-	Map[3][7] = new Room(0,"Hallway","");
-	Map[3][8] = new Room(8,"Hallway","");
+	Map[3][0] = new Room(0,"Hallway","Hi, I'm working");
+	Map[3][1] = new Room(0,"Hallway","Hi, I'm working");
+	Map[3][2] = new Room(0,"Hallway","Hi, I'm working"); ///Sword
+	Map[3][3] = new Room(8,"Hallway","Hi, I'm working"); //Apple
+	Map[3][4] = new Room(0,"Hallway","Hi, I'm working");
+	Map[3][5] = new Room(0,"Hallway","Hi, I'm working");
+	Map[3][6] = new Room(0,"Hallway","Hi, I'm working"); //Apple
+	Map[3][7] = new Room(0,"Hallway","Hi, I'm working");
+	Map[3][8] = new Room(8,"Hallway","Hi, I'm working");
 	//Row 4
-	Map[4][0] = new Room(0,"Hallway",""); //Scissors
-	Map[4][5] = new Room(4,"Hallway","");
-	Map[4][8] = new Room(0,"Hallway","");
+	Map[4][0] = new Room(0,"Hallway","Hi, I'm working");
+	Map[4][5] = new Room(4,"Hallway","Hi, I'm working");
+	Map[4][8] = new Room(0,"Hallway","Hi, I'm working");
 	Map[4][9] = new Room(12,"Hallway","");
 	//Row 5
 	Map[5][0] = new Room(1,"Hallway","");
@@ -80,32 +80,17 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 
 void Dungeon::move(char direction)
 {
-	if(direction == 'n')
+	if(direction == 'n' && Map[northSouthIndex-1][eastWestIndex] != NULL)
 		northSouthIndex--;
-	else if(direction == 's')
+	else if(direction == 's' && Map[northSouthIndex+1][eastWestIndex] != NULL)
 		northSouthIndex++;
 	else if(direction == 'e')
 		eastWestIndex++;
 	else if(direction == 'w')
 		eastWestIndex--;
+}
 
-	if(Map[northSouthIndex][eastWestIndex]->currentEnemy())
-	{
-		char choice
-		cout << Map[northSouthIndex][eastWestIndex]->currentEnemy()->EncounterLine() << endl;
-		cout << "You are now in combat, you can either run(\"r\") or attack(\"a\")" << endl;
-		cin >> choice;
-		while(true)
-			if(choice == 'a')
-				//attack function???
-			if(choice == 'r')
-				if(direction == 'n')
-					northSouthIndex++;
-				else if(direction == 's')
-					northSouthIndex--;
-				else if(direction == 'e')
-					eastWestIndex--;
-				else if(direction == 'w')
-					eastWestIndex++;
-	}
+Character* Dungeon::getPlayer()
+{
+	return player;
 }
