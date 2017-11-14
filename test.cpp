@@ -1,17 +1,11 @@
 //test.cpp
 #include <iostream>
 #include "item.h"
-#include "item.cpp"
 #include "character.h"
-#include "character.cpp"
 #include "enemy.h"
-#include "enemy.cpp"
 #include "room.h"
-#include "room.cpp"
 #include "dungeon.h"
-#include "dungeon.cpp"
 #include "game.h"
-#include "game.cpp"
 
 
 //this will be a factory
