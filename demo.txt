@@ -2,9 +2,22 @@ demo.txt
 
 To compile you will need to type 
 g++ -Wall -std=gnu++0x test.cpp -o adventure
-into the terminal while in the file.
+into the terminal while in the file location.
 
-You will start in a room. Due to the current lack of item functionality you will want to use the command "d" to activate debug mode.
+Move Functionality Finished
+Combat Functionality Finished
+Look Functionality Finished
+Debug Mode Finished
+View Current Stats Finished
+Map Finished
+Dungeon Finished
+Room Finished
+Items In-Progress
+Stat-Altering through Items In-Progress
+Curios In-Progress
+
+
+You will start in a room. Due to the current lack of item functionality you will want to use the command "d" to activate debug mode. Debug mode sets your stats at an arbitrarily high number so that nothing can kill you.
 
 To show that movement works type "n".
 
@@ -12,8 +25,12 @@ Type "n".
 
 This will activate combat, you can either use the run function by typing "r" or the attack function by using "a". Since you should be currently in debug mode you shouldn't ever be able to lose. If you want to test the death functionality follow these instructions
 
-"n","n","a","e","e","a" and you should be dead.
-
 To test the look functionality at any point type "l".
 
 To test the current stat function type "q".
+
+To test death functionality start the program over then follow the following instructions.
+
+"n","n","a","e","e","a" and you should be dead.
+
+
