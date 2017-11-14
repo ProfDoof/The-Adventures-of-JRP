@@ -30,9 +30,6 @@ class Character{
 		void Score(int input);
 
 		void AddToInventory(Item push);
-
 		//functions
-		/*void Attack(Character enemy);*/
-
 };
 #endif
