@@ -16,9 +16,9 @@ class Dungeon{
         void move(char direction);
         Character* getPlayer();
         int LRI() {return eastWestIndex;}
-        void LRI(int input) {eastWestIndex+=input;}
+        void LRI(int input) {if( eastWestIndex < 10 && eastWestIndex >= 0 ) eastWestIndex+=input;}
         int TBI() {return northSouthIndex;}
-        void TBI(int input) {eastWestIndex+=input;}
+        void TBI(int input) {if( northSouthIndex < 8 && northSouthIndex >= 0 ) northSouthIndex+=input;}
 };
 
 #endif

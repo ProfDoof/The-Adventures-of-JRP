@@ -15,7 +15,7 @@ void Game::run()
     char cmd;
     bool flag = true;
     while(flag) {
-        cout << "Please enter a command. Enter \"?\" for a list of commands: ";   
+        cout << "What do you do? Enter \"?\" for a list of commands: ";   
         cin >> cmd;
         cout << "\n";
         if(cmd == '?')
@@ -24,7 +24,7 @@ void Game::run()
                 //<< "If there is a curio in the room, you can examine it with \"c\" \n"
                 << "If there is a monster in the room, you can run away with \"r\" or attack with \"a\". \n"
                 << "If you wish to see your current stats you can use the command \"q\"\n"
-                << "If you want to exit the game you can do so with the command \"x\"";
+                << "If you want to exit the game you can do so with the command \"x\"\n";
                 //<< "If there are items in the room, you may get a list of them with \"i\" and look at them closer with the number of the item in the room, for example \"1\" or \"5\".";
         else if(cmd == 'n' || cmd == 's' || cmd == 'e' || cmd == 'w')       
         {
