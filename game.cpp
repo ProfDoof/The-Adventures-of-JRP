@@ -23,14 +23,18 @@ void Game::run()
                 << "You can move North, South, East, or West with the commands \"n\", \"s\", \"e\", or \"w\" respectively. This will of course not work if there is no door that direction. \n"
                 //<< "If there is a curio in the room, you can examine it with \"c\" \n"
                 << "If there is a monster in the room, you can run away with \"r\" or attack with \"a\". \n"
-                << "If you wish to see your current stats you can use the command \"q\"\n";
+                << "If you wish to see your current stats you can use the command \"q\"\n"
+                << "If you want to exit the game you can do so with the command \"x\"";
                 //<< "If there are items in the room, you may get a list of them with \"i\" and look at them closer with the number of the item in the room, for example \"1\" or \"5\".";
         else if(cmd == 'n' || cmd == 's' || cmd == 'e' || cmd == 'w')       
         {
             dung->move(cmd);
             cout << dung->getCurrentRoom()->description() << endl;
             if(dung->getCurrentRoom()->CurrentEnemy())
+            {
+                cout << "You have been attacked by " << dung->getCurrentRoom()->CurrentEnemy()->EnemyName() << endl;
                 combat(cmd,flag);
+            }        
         }
         else if(cmd == 'l')
             cout << look() << endl;
