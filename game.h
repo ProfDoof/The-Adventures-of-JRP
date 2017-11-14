@@ -21,7 +21,7 @@ class Game {
 		//Where we start destroying things
 		void end();
 		//Combat routine
-		void combat(char direction);
+		void combat(char direction, bool& flag);
 
 };
 #endif

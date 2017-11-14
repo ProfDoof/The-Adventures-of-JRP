@@ -13,7 +13,8 @@ void Game::run()
     cout << "Welcome... To the Dungeon!\n";
     cout << dung->getCurrentRoom()->description() << endl;
     char cmd;
-    while(true) {
+    bool flag = true;
+    while(flag) {
         cout << "Please enter a command. Enter \"?\" for a list of commands: ";   
         cin >> cmd;
         if(cmd == '?')
@@ -25,9 +26,9 @@ void Game::run()
         else if(cmd == 'n' || cmd == 's' || cmd == 'e' || cmd == 'w')       
         {
             dung->move(cmd);
-            dung->getCurrentRoom()->description();
+            cout << dung->getCurrentRoom()->description() << endl;
             if(dung->getCurrentRoom()->CurrentEnemy())
-                combat(cmd);
+                combat(cmd,flag);
         }
         else if(cmd == 'l')
             cout << "This function is not yet supported.\n";       
@@ -42,7 +43,7 @@ void Game::end()
 
 }
 
-void Game::combat(char direction)
+void Game::combat(char direction, bool& flag)
 {
     char choice;
     cout << dung->getCurrentRoom()->CurrentEnemy()->EncounterLine() << endl;
@@ -76,6 +77,8 @@ void Game::combat(char direction)
             {
                 cout << "You have died." << endl;
                 cout << "Look, just try again... maybe, you'll succeed this time." << endl;
+                flag = false;
+                break;
             }                
               
         }    
