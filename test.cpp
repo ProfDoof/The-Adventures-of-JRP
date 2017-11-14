@@ -1,19 +1,28 @@
 //test.cpp
 #include <iostream>
 #include "item.h"
+#include "item.cpp"
 #include "character.h"
+#include "character.cpp"
 #include "enemy.h"
+#include "enemy.cpp"
 #include "room.h"
+#include "room.cpp"
 #include "dungeon.h"
+#include "dungeon.cpp"
 #include "game.h"
+#include "game.cpp"
 
 
 //this will be a factory
 
 int main()
 {
-	Game JPR();
-	Dungeon YourMap();
+	Game JPR;
+	JPR.start();
+	JPR.run();
+	JPR.end();
+/*	Dungeon YourMap();
 	Room Base(2,"Testing Room", "This rooms only purpose is to have no purpose");
 	Enemy* Villains[10];
 	Villains[0] = Enemy::createEnemy(1);
@@ -45,7 +54,7 @@ int main()
 	cout << AKnife.Name() << endl;
 	cout << AKnife.Description() << endl;
 	cout << AKnife.Damage() << endl;
-	cout << AKnife.Healing() << endl;
+	cout << AKnife.Healing() << endl;*/
 
 	return 0;
 }

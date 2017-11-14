@@ -5,14 +5,14 @@
 class Game {
 	private:
         Dungeon* dung;
-        static Game* g_instance;
-        Game();
+        //static Game* g_instance;
 	public:
-        static Game* instance() {
+        /*Game();*/
+        /*static Game* instance() {
             if (!g_instance) 
                 g_instance = new Game();
             return g_instance;
-        }
+        }*/
 
 		//Initializer for the entire game
 		void start();
@@ -20,5 +20,9 @@ class Game {
 		void run();
 		//Where we start destroying things
 		void end();
+		//Combat routine
+		void combat(char direction, bool& flag);
+		string look();
+
 };
 #endif

@@ -11,9 +11,10 @@ class Item {
         std::string _Description;
 		int _Damage;
 		int _Healing;
+		int _Defense;
 		
 	public:
-		Item(std::string Nam, std::string Desc, int Dam, int Heal) : _Name(Nam), _Description(Desc), _Damage(Dam), _Healing(Heal) {}
+		Item(std::string Nam, std::string Desc, int Dam, int Heal, int Def) : _Name(Nam), _Description(Desc), _Damage(Dam), _Healing(Heal), _Defense(Def) {}
 		
 		//Getters and Setters
 		void Name(std::string N) { _Name = N; }
@@ -24,6 +25,8 @@ class Item {
 		int Damage() const { return _Damage; }
 		void Healing(int H) { _Healing = H; }
 		int Healing() const { return _Healing; }
+		void Defense(int D) { _Defense = D; }
+		int Defense() const { return _Defense; }
 		class Error {
 			private:
                 std::string desc;

@@ -4,7 +4,6 @@
 using namespace std;
 Room::Room(int MonsterType, string RoomName, string RoomDesc)
 {
-	Adventurer = NULL;
 	Monster = Enemy::createEnemy(MonsterType);
 	Puzzle = NULL;
 	Visited = false;
