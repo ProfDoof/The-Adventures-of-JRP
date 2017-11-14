@@ -1,4 +1,4 @@
 *.o
 adventure
 *.gch
-test.exe
+*.exe
