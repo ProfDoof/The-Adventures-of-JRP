@@ -6,7 +6,6 @@
 
 class Room{
 	private:
-		Character* Adventurer;
 		Enemy* Monster;//
 		Curio* Puzzle;//
 		bool Visited;//
@@ -16,6 +15,7 @@ class Room{
 	public:
 		Room();
 		Room(int MonsterType, string RoomName, string RoomDesc);
+		~Room() {if(Monster) delete Monster; if(Puzzle) delete Puzzle; }
 
 		bool visit() const;
 		void visit(bool input);

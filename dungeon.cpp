@@ -40,7 +40,9 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Map[2][8] = new Room(0,"Hallway","");
 	Map[2][9] = new Room(11,"Guard Post",""); //Helmet
 	//Row 3
-	Map[3][0] = new Room(0,"Hallway","Hi, I'm working");
+	Map[3][0] = new Room(0,"Hallway","You are in a squalid and grimy room. One wall has a set of iron bars with a door set in
+	them. You recognize this room as your cell, the place that you're confined when not being
+	forced to work. There is a straw mat in the corner. There is a door to the north and south.");
 	Map[3][1] = new Room(0,"Hallway","Hi, I'm working");
 	Map[3][2] = new Room(0,"Hallway","Hi, I'm working"); ///Sword
 	Map[3][3] = new Room(8,"Hallway","Hi, I'm working"); //Apple
@@ -80,17 +82,33 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 
 void Dungeon::move(char direction)
 {
-	if(direction == 'n' && Map[northSouthIndex-1][eastWestIndex] != NULL)
+	if(direction == 'n' && northSouthIndex-1 >= 0 && Map[northSouthIndex-1][eastWestIndex] != NULL)
 		northSouthIndex--;
-	else if(direction == 's' && Map[northSouthIndex+1][eastWestIndex] != NULL)
+	else if(direction == 's' && northSouthIndex+1 < 8 && Map[northSouthIndex+1][eastWestIndex] != NULL)
 		northSouthIndex++;
-	else if(direction == 'e')
+	else if(direction == 'e' && eastWestIndex+1 < 10 && Map[northSouthIndex][eastWestIndex+1] != NULL)
 		eastWestIndex++;
-	else if(direction == 'w')
+	else if(direction == 'w' && eastWestIndex-1 >= 0 && Map[northSouthIndex][eastWestIndex-1] != NULL)
 		eastWestIndex--;
+	else
+		cout << "There is no room you can go into in that direction... just, look, just try again..." << endl;
 }
 
 Character* Dungeon::getPlayer()
 {
 	return player;
+}
+
+Dungeon::~Dungeon()
+{
+	delete player;
+	for( int i = 7; i >= 0; i-- )
+	{
+		for( int j = 9; j >= 0; j-- )
+		{
+			delete Map[i][j];
+		}
+		delete [] Map[i];
+	}
+	delete [] Map;
 }

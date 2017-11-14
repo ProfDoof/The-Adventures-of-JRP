@@ -11,6 +11,7 @@ class Dungeon{
 
       public:
         Dungeon();
+        ~Dungeon();
         Room* getCurrentRoom() const { return Map[northSouthIndex][eastWestIndex];}
         void move(char direction);
         Character* getPlayer();

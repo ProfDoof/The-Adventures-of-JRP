@@ -21,7 +21,8 @@ void Game::run()
             cout << "You can look around the room with the command \"l\". \n"
                 << "You can move North, South, East, or West with the commands \"n\", \"s\", \"e\", or \"w\" respectively. This will of course not work if there is no door that direction. \n"
                 //<< "If there is a curio in the room, you can examine it with \"c\" \n"
-                << "If there is a monster in the room, you can run away with \"r\" or attack with \"a\". \n";
+                << "If there is a monster in the room, you can run away with \"r\" or attack with \"a\". \n"
+                << "If you wish to see your current stats you can use the command \"q\"\n";
                 //<< "If there are items in the room, you may get a list of them with \"i\" and look at them closer with the number of the item in the room, for example \"1\" or \"5\".";
         else if(cmd == 'n' || cmd == 's' || cmd == 'e' || cmd == 'w')       
         {
@@ -31,7 +32,23 @@ void Game::run()
                 combat(cmd,flag);
         }
         else if(cmd == 'l')
-            cout << "This function is not yet supported.\n";       
+            cout << look() << endl;
+        else if(cmd == 'q') 
+            cout << "Health: " << dung->getPlayer()->HP()
+                 << " Defense: " << dung->getPlayer()->DEF()
+                 << " Attack: " << dung->getPlayer()->ATK() << endl;
+        else if(cmd == 'd')
+        {
+            cout << "Debug Mode Activated" << endl;
+            dung->getPlayer()->ATK(999);
+            dung->getPlayer()->DEF(999);
+            dung->getPlayer()->HP(999);
+        }
+        else if(cmd == 'x')
+        {    
+            cout << "Exiting Game..." << endl;
+            flag = false;
+        }    
         else
             cout << "Unrecognized input. Please try again: ";
 	}
@@ -51,35 +68,30 @@ void Game::combat(char direction, bool& flag)
     cin >> choice;
     while(true)
     {    
-        cout << "A." << endl;
         if(choice == 'a')
         {
-            cout << "B." << endl;
             int enemyAtk = dung->getCurrentRoom()->CurrentEnemy()->ATK();
             int playerAtk = dung->getPlayer()->ATK();
-            cout << "C." << endl;
             int enemyDef = dung->getCurrentRoom()->CurrentEnemy()->DEF();
             int playerDef = dung->getPlayer()->DEF();
-            cout << "D." << endl;
             int enemyHp = dung->getCurrentRoom()->CurrentEnemy()->HP();
             int playerHp = dung->getPlayer()->HP();
-            cout << "E." << endl;
-            if((playerAtk - enemyDef) > enemyHp)
+            if((playerAtk - enemyDef) >= enemyHp)
             {
-                cout << "F." << endl;
                 cout << "Congratulations, you have defeated " << dung->getCurrentRoom()->CurrentEnemy()->EnemyName() << endl;
                 dung->getCurrentRoom()->ChangeEnemy(NULL);
                 break;
             }
-            cout << "G." << endl;
-            cout << "You have done " << playerAtk << " damage.\n" << "The enemy has done " << enemyAtk << " damage." << endl;
-            if(playerHp < (enemyAtk - playerDef))
+            cout << "You have done " << playerAtk - enemyDef << " damage.\n" << "The enemy has done " << enemyAtk - playerDef<< " damage." << endl;
+            if(playerHp <= (enemyAtk - playerDef))
             {
                 cout << "You have died." << endl;
                 cout << "Look, just try again... maybe, you'll succeed this time." << endl;
                 flag = false;
                 break;
-            }                
+            }
+            dung->getPlayer()->HP(playerHp - (enemyAtk - playerDef));
+            dung->getCurrentRoom()->CurrentEnemy()->HP(enemyHp - (playerAtk - enemyDef));
               
         }    
         else if(choice == 'r')
@@ -97,4 +109,9 @@ void Game::combat(char direction, bool& flag)
         }
         cin >> choice;
     }  
+}
+
+string Game::look()
+{
+    return dung->getCurrentRoom()->description();
 }
