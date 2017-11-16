@@ -17,6 +17,7 @@ class Item {
 		Item(std::string Nam, std::string Desc, int Dam, int Heal, int Def) : _Name(Nam), _Description(Desc), _Damage(Dam), _Healing(Heal), _Defense(Def) {}
 		
 		//Getters and Setters
+		bool operator==(const std::string compare);
 		void Name(std::string N) { _Name = N; }
         std::string Name() { return _Name; }
 		void Description(std::string D) { _Description = D; }
@@ -34,6 +35,7 @@ class Item {
 				Error(std::string description) : desc(description) {}
 		};
 };
+
 
 class Curio {
 	private:

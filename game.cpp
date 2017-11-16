@@ -1,6 +1,8 @@
 #include "game.h"
 #include "room.h"
 #include <iostream>
+#include <list>
+#include <algorithm>
 using namespace std;
 void Game::start()
 {
@@ -42,6 +44,15 @@ void Game::run()
             cout << "Health: " << dung->getPlayer()->HP()
                  << " Defense: " << dung->getPlayer()->DEF()
                  << " Attack: " << dung->getPlayer()->ATK() << endl;
+        else if(cmd == 'x')
+        {    
+            cout << "Exiting Game..." << endl;
+            flag = false;
+        }   
+        else if(cmd == 't')
+        {
+            grab();
+        }
         else if(cmd == 'd')
         {
             cout << "Debug Mode Activated" << endl;
@@ -49,11 +60,6 @@ void Game::run()
             dung->getPlayer()->DEF(999);
             dung->getPlayer()->HP(999);
         }
-        else if(cmd == 'x')
-        {    
-            cout << "Exiting Game..." << endl;
-            flag = false;
-        }    
         else
             cout << "Unrecognized input. Please try again: ";
 	}
@@ -119,4 +125,18 @@ void Game::combat(char direction, bool& flag)
 string Game::look()
 {
     return dung->getCurrentRoom()->description();
+}
+
+void Game::grab()
+{
+    string itemname;
+    cout << "What item would you like to take? ";
+    getline(cin,itemname);
+    Item temp = dung->getCurrentRoom()->TakeFrom(itemname);
+    if(temp == "Error")
+        cout << "That is not a recognized item... Try again.";
+    else
+    {
+        dung->getPlayer()->AddToInventory(temp);
+    }
 }
