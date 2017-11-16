@@ -6,7 +6,7 @@ using namespace std;
 
 Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 {
-	player = new Character(10,10,10);
+	player = new Character(40,20,30);
 	Map = new Room** [8];
 	for( int i = 0; i < 8; i++ )
 	{
