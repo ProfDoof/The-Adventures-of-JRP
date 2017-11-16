@@ -96,4 +96,9 @@ class Tanner: public Enemy {
 	friend class Enemy;
 	Tanner(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
 };
+
+class Burton: public Enemy {
+	friend class Enemy;
+	Burton(int hp, int de, int at, string e, string d, string na) : Enemy(hp,de,at,e,d,na) {}
+};
 #endif

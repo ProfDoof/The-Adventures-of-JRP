@@ -72,7 +72,7 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Map[7][2] = new Room(0,"Hallway","You are in a hallway. The hallway looks just like the previous hallway except there is a dead rat in this one. Marvelous. There are doors to the East and West.");
 	Map[7][3] = new Room(0,"Hallway","You are in a hallway. A sense of dread fills you when you look at this hallway. It is just as boring as the previous one. Imagine that. There are doors leading to the East and West.");
 	Map[7][4] = new Room(0,"Hallway","You are in a normal hallway. There is a broken cell door on the floor here. There are doors to the East and West.");
-	Map[7][5] = new Room(1,"Hallway","You are in a small hallway. It is uncomfortable to walk through, your shoulders scraping the sides if you aren't careful. There are doors to the North, East, and West.");
+	Map[7][5] = new Room(13,"Hallway","You are in a small hallway. It is uncomfortable to walk through, your shoulders scraping the sides if you aren't careful. There are doors to the North, East, and West.");
 	Map[7][6] = new Room(0,"Hallway","You are in the least important hallway. There is absolutely nothing here. Just doors leading East and West.");
 	Map[7][7] = new Room(0,"Hallway","You are in the empty hallway. Possibly the strangest hallway you've seen so far, it is completely bare and empty. No lights, no cells, nothing. The only defining features are the doors on the East and West ends.");
 	Map[7][8] = new Room(0,"Hallway","You are in a blindingly bright hallway. You can barely make out a door to the East, and another to the North.");

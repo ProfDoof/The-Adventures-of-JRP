@@ -10,7 +10,7 @@ void Game::start()
 void Game::run()
 {
 
-    cout << "Welcome... To the Dungeon!\n\nYou're game starts NOW!!!!!!\n\n";
+    cout << "Welcome... To the Dungeon!\n\nYour game starts NOW!!!!!!\n\n";
     cout << dung->getCurrentRoom()->description() << endl;
     char cmd;
     bool flag = true;
