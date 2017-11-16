@@ -68,6 +68,8 @@ Enemy* Enemy::createEnemy(int type)
 		return new StJohn(50,50,40,"","","Cleric St. John");
 	else if(type == 14)
 		return new Tanner(0,0,0,"","","Blacksmith Rich Tanner");
+	else if(type == 15)
+		return new Burton(0,0,0,"","","Engineer Burton");
 	
 	return NULL;
 }
