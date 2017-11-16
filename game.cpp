@@ -1,6 +1,8 @@
 #include "game.h"
 #include "room.h"
+#include <string>
 #include <iostream>
+#include <sstream>
 using namespace std;
 void Game::start()
 {
@@ -12,23 +14,37 @@ void Game::run()
 
     cout << "Welcome... To the Dungeon!\n\nYour game starts NOW!!!!!!\n\n";
     cout << dung->getCurrentRoom()->description() << endl;
-    char cmd;
+    string cmd;
+    string input;
+    string action;
+    sstream ss;
     bool flag = true;
     while(flag) {
         cout << "What do you do? Enter \"?\" for a list of commands: ";   
-        cin >> cmd;
+        getline(cin,input);
+        ss << input;
+        ss >> cmd;
+        ss >> action;
         cout << "\n";
+        for(int g = 0; cmd[g]!= 0; g++)
+            {
+                cmd[g] = tolower(cmd[g]);
+            }
+        for(int g = 0; action[g]!=0; g++)
+            {
+                action[g] = tolower(action[g]);
+            }
         if(cmd == '?')
-            cout << "You can look around the room with the command \"l\". \n"
-                << "You can move North, South, East, or West with the commands \"n\", \"s\", \"e\", or \"w\" respectively. This will of course not work if there is no door that direction. \n"
+            cout << "You can look around the room with the command \"Look\". \n"
+                << "You can move North, South, East, or West with the command Move, then the direction: \"North\", \"South\", \"East\", or \"West\". This will of course not work if there is no door that direction. \n"
                 //<< "If there is a curio in the room, you can examine it with \"c\" \n"
-                << "If there is a monster in the room, you can run away with \"r\" or attack with \"a\". \n"
-                << "If you wish to see your current stats you can use the command \"q\"\n"
-                << "If you want to exit the game you can do so with the command \"x\"\n";
+                << "If there is a monster in the room, you can run away with \"Run\" or attack with \"Attack\". \n"
+                << "If you wish to see your current stats you can use the command \"Stats\"\n"
+                << "If you want to exit the game you can do so with the command \"Exit\"\n";
                 //<< "If there are items in the room, you may get a list of them with \"i\" and look at them closer with the number of the item in the room, for example \"1\" or \"5\".";
-        else if(cmd == 'n' || cmd == 's' || cmd == 'e' || cmd == 'w')       
+        else if(cmd == 'move')       
         {
-            dung->move(cmd);
+            dung->move(action);
             cout << dung->getCurrentRoom()->description() << endl;
             if(dung->getCurrentRoom()->CurrentEnemy())
             {
@@ -36,20 +52,20 @@ void Game::run()
                 combat(cmd,flag);
             }        
         }
-        else if(cmd == 'l')
+        else if(cmd == 'look')
             cout << look() << endl;
-        else if(cmd == 'q') 
+        else if(cmd == 'stats') 
             cout << "Health: " << dung->getPlayer()->HP()
                  << " Defense: " << dung->getPlayer()->DEF()
                  << " Attack: " << dung->getPlayer()->ATK() << endl;
-        else if(cmd == 'd')
+        else if(cmd == 'up,up,down,down,left,right,left,right,b,a,start')
         {
             cout << "Debug Mode Activated" << endl;
             dung->getPlayer()->ATK(999);
             dung->getPlayer()->DEF(999);
             dung->getPlayer()->HP(999);
         }
-        else if(cmd == 'x')
+        else if(cmd == 'exit')
         {    
             cout << "Exiting Game..." << endl;
             flag = false;
@@ -67,13 +83,15 @@ void Game::end()
 
 void Game::combat(char direction, bool& flag)
 {
-    char choice;
+    string choice;
     cout << dung->getCurrentRoom()->CurrentEnemy()->EncounterLine() << endl;
-    cout << "You are now in combat, you can either run(\"r\") or attack(\"a\")" << endl;
+    cout << "You are now in combat, you can either run or attack" << endl;
     cin >> choice;
+    for(int I = 0; choice[I]!=0; I++)
+        choice[I] = tolower(choice[I])
     while(true)
     {    
-        if(choice == 'a')
+        if(choice == 'attack')
         {
             int enemyAtk = dung->getCurrentRoom()->CurrentEnemy()->ATK();
             int playerAtk = dung->getPlayer()->ATK();
@@ -99,7 +117,7 @@ void Game::combat(char direction, bool& flag)
             dung->getCurrentRoom()->CurrentEnemy()->HP(enemyHp - (playerAtk - enemyDef));
               
         }    
-        else if(choice == 'r')
+        else if(choice == 'run')
         {
             if(direction == 'n')
                 dung->TBI(1);
