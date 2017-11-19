@@ -1,6 +1,10 @@
 #include "room.h"
 #include "enemy.h"
 #include "character.h"
+#include "item.h"
+#include <string>
+#include <list>
+#include <algorithm>
 using namespace std;
 Room::Room(int MonsterType, string RoomName, string RoomDesc)
 {
@@ -46,13 +50,25 @@ void Room::AddToFloor(Item ttt)
 	LooseItems.push_back(ttt);
 }
 
-/*
-Item Room::TakeFrom()
+
+Item Room::TakeFrom(string compare)
 {
 	//How do I do this?
-	
+	list<Item>::iterator it;
+	it = find(LooseItems.begin(),LooseItems.end(), compare);
+	if(it != LooseItems.end())
+	{
+		Item temp(*it);
+		LooseItems.erase(it);
+		return temp;
+	}
+	else
+	{
+		Item temp("Error","That Item doesn't exist", 0, 0, 0);
+		return temp;
+	}
 }
-*/
+
 
 Curio* Room::LookAtCurio() const
 {
@@ -72,4 +88,19 @@ Enemy* Room::CurrentEnemy() const
 void Room::ChangeEnemy(Enemy* input)
 {
 	Monster = input;
+}
+
+void DisplayItem(Item it)
+{
+	cout << it.Name() << " ";
+}
+
+void Room::DescribeItems()
+{
+	for_each(LooseItems.begin(),LooseItems.end(), DisplayItem);
+}
+
+int Room::NumItems()
+{
+	return LooseItems.size();
 }

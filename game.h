@@ -22,7 +22,8 @@ class Game {
 		void end();
 		//Combat routine
 		void combat(char direction, bool& flag);
-		string look();
+		void look();
+		void grab();
 
 };
 #endif
