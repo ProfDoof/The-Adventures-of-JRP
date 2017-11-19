@@ -89,3 +89,18 @@ void Room::ChangeEnemy(Enemy* input)
 {
 	Monster = input;
 }
+
+void DisplayItem(Item it)
+{
+	cout << it.Name() << " ";
+}
+
+void Room::DescribeItems()
+{
+	for_each(LooseItems.begin(),LooseItems.end(), DisplayItem);
+}
+
+int Room::NumItems()
+{
+	return LooseItems.size();
+}

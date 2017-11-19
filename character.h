@@ -30,6 +30,8 @@ class Character{
 		void Score(int input);
 
 		void AddToInventory(Item push);
+		void CurrentInventory();
+		int InventorySize();
 		//functions
 };
 #endif

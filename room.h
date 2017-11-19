@@ -35,6 +35,9 @@ class Room{
 		Enemy* CurrentEnemy() const;
 		void ChangeEnemy(Enemy* input);
 
+		void DescribeItems();
+		int NumItems();
+
 		class Error {
 			public:
                 std::string desc;

@@ -32,6 +32,9 @@ void Game::run()
         {
             dung->move(cmd);
             cout << dung->getCurrentRoom()->description() << endl;
+            cout << "Here is a list of the items in the room: ";
+            dung->getCurrentRoom()->DescribeItems();
+            cout << endl;
             if(dung->getCurrentRoom()->CurrentEnemy())
             {
                 cout << "You have been attacked by " << dung->getCurrentRoom()->CurrentEnemy()->EnemyName() << endl;
@@ -39,7 +42,7 @@ void Game::run()
             }        
         }
         else if(cmd == 'l')
-            cout << look() << endl;
+            look();
         else if(cmd == 'q') 
             cout << "Health: " << dung->getPlayer()->HP()
                  << " Defense: " << dung->getPlayer()->DEF()
@@ -59,6 +62,10 @@ void Game::run()
             dung->getPlayer()->ATK(999);
             dung->getPlayer()->DEF(999);
             dung->getPlayer()->HP(999);
+        }
+        else if(cmd == 'm')
+        {
+            dung->getPlayer()->CurrentInventory();
         }
         else
             cout << "Unrecognized input. Please try again: ";
@@ -122,21 +129,46 @@ void Game::combat(char direction, bool& flag)
     }  
 }
 
-string Game::look()
+void Game::look()
 {
-    return dung->getCurrentRoom()->description();
+    cout << dung->getCurrentRoom()->description() << endl;
+    cout << "Here is a list of the items in the room: ";
+    dung->getCurrentRoom()->DescribeItems();
+    cout << endl;
 }
 
 void Game::grab()
 {
     string itemname;
     cout << "What item would you like to take? ";
+    //Will need updates to work with the parser
+    getline(cin,itemname);
     getline(cin,itemname);
     Item temp = dung->getCurrentRoom()->TakeFrom(itemname);
     if(temp == "Error")
         cout << "That is not a recognized item... Try again.";
     else
-    {
+    {;
+        int playerAtk = dung->getPlayer()->ATK();
+        int playerDef = dung->getPlayer()->DEF();
+        int playerHp = dung->getPlayer()->HP();
         dung->getPlayer()->AddToInventory(temp);
+        if(temp.Healing() > 0)
+        {
+            cout << "Your health increases by " << temp.Healing() << " points." << endl;
+            dung->getPlayer()->HP(playerHp + temp.Healing());
+        }    
+        if(temp.Defense() > 0)
+        {
+            cout << "Your defense increases by " << temp.Defense() << " points." << endl;
+            dung->getPlayer()->DEF(playerDef + temp.Defense());
+        }
+        if(temp.Damage() > 0)
+        {
+            cout << "Your attack increases by " << temp.Damage() << " points." << endl;
+            dung->getPlayer()->ATK(playerAtk + temp.Damage());
+        }
+
+
     }
 }
