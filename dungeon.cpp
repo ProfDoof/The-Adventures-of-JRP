@@ -6,7 +6,7 @@ using namespace std;
 
 Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 {
-	player = new Character(10,10,10);
+	player = new Character(40,20,30);
 	Map = new Room** [8];
 	for( int i = 0; i < 8; i++ )
 	{
@@ -21,10 +21,11 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	//Format is that you create a new room and then can push any items in that you want in that room.
 	//Row 0
 	Map[0][0] = new Room(0,"Storage Room","You are in a large storage room at the end of a hallway. There are some miscellaneous supplies lying around, but none seem pertinent to your quest. A broom leans against the wall next to a box. Inside the box is a number of feather dusters but you think there might be something underneath them. You think this may just be a broom closet. There is a door to the South, the one you came through."); //Armor
-	Item BArmor("Basic Armor","This increases your Defense by 10", 0,0,10);
 	Map[0][2] = new Room(4,"Common Bedroom","You are in a common bedroom. It is fairly unremarkable, a small bed sits in the corner. A dresser and a wardrobe are on the opposite side of the room. There is a door leading South back to the hallway."); 
 	Map[0][3] = new Room(0,"Meeting Room","You are in a large room with a table in the middle surrounded by chairs. It looks to have been a meeting room of some sort. There is a shelf with some papers on it. On closer inspection they appear to be old documents pertaining to business carried out by the castle. Nothing important to you. Lying on the table however, is a nice looking sword. There is a door leading back South."); //Sword
 	Map[0][4] = new Room(0,"Storage Room","You are in a small storage room tucked in the side of the hallway. There are some cleaning supplies lying about in the close, but one looks kind of off to you. There's a bottle of red liquid that looks like it was made for drinking. The exit back to the hallway is to the South."); //Health Potion
+	Item HPot("Health Potion","A red concoction that restores vitality. Will restore 50 HP.", 0,50,0);
+	Map[0][4]->AddToFloor(HPot);
 	Map[0][6] = new Room(10,"The Slave Master's Bedroom","You are in a rather opulent room with a high roof and fancy decorations. The bed is large and imperial, adorned with silken sheets and velvet drapery. A large dresser with a mirror of gold sits in the corner. There is a door to the South."); //Pendant(Increases DEF)
 	//Row 1
 	Map[1][0] = new Room(9,"Hallway","You are in a fairly unremarkable hallway in the lower dungeon. There are torches on both walls and you can see doors to the North, East, and South."); 
@@ -42,6 +43,8 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Map[2][9] = new Room(11,"Guard Post","You are in an empty guard post. There are signs of recent activity, namely a half-eaten sandwich and a few open cabinets. On the table sits a guard helmet in good condition."); //Helmet
 	//Row 3
 	Map[3][0] = new Room(0,"Hallway","You are in a squalid and grimy room. One wall has a set of iron bars with a door set in them. You recognize this room as your cell, the place that you're confined when not being forced to work. There is a straw mat in the corner. There are doors to the North, East, and South.");
+	Item BArmor("Basic Armor","This increases your Defense by 10", 0,0,10);
+	Map[3][0]->AddToFloor(BArmor);
 	Map[3][1] = new Room(0,"Hallway","You are in a hallway in the lower dungeon. There are some rats scurrying about, but nothing of note catches your eye. There are exits to the East and West.");
 	Map[3][2] = new Room(0,"Hallway","You are in a hallway in the lower dungeon. It is utterly unremarkable in all regards, except for the old sword lying by one of the cells. There are doors to the East and West."); ///Sword
 	Map[3][3] = new Room(8,"Hallway","You are in a hallway in the upper dungeon. It is fairly plain, though there is one cell near the northern end of the hallway. You can see part of a food tray sticking out from under the cell door. There are doors to the North, East, and West."); //Apple
@@ -59,6 +62,7 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Map[5][0] = new Room(1,"Hallway","You are in a hallway in the upper dungeon. There is nothing of note here. There are doors to the North and South.");
 	Map[5][2] = new Room(0,"Forge","You are in a large room with a forge set in the side. It doesn't look like anyone has made anything here in a while, however you spy the gleam of metal in the corner of the room. There is a door to the South and a storage closet to the East."); //Armor(Best)
 	Map[5][3] = new Room(0,"Storage Closet","You are in a storage closet tucked in to the side of the forge. There isn't very much in here. In the corner is a box with a stick poking out of the top."); //Sword(Best)
+	Item GSword("Sword of St. Schubert","The legendary blade blessed by St. Schubert himself. Increases your damage by 91.", 91,0,0);
 	Map[5][5] = new Room(0,"Hallway","You are in an unremarkable hallway. There is a chandelier hanging from the ceiling, but it is unlit. There are doors to the North and South."); 
 	Map[5][8] = new Room(0,"Hallway","You are in a hallway. It looks like most of the other hallways you've visited. There are doors to the North and South.");
 	//Row 6
