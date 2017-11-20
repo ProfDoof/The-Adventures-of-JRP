@@ -60,12 +60,20 @@ void Game::run()
                 combat(action[0],flag);
             }        
         }
-        else if(cmd == 'take')
+        else if(cmd == "take")
         {
-            grab();
+            string placer;
+            string itemname;
+            ss >> itemname;
+            while(ss >> placer)
+            {
+                itemname += " " + placer;
+            }
+
+            grab(itemname);
         }
         else if(cmd == "look")
-            cout << look() << endl;
+            look();
         else if(cmd == "stats") 
             cout << "Health: " << dung->getPlayer()->HP()
                  << " Defense: " << dung->getPlayer()->DEF()
@@ -77,7 +85,7 @@ void Game::run()
             dung->getPlayer()->DEF(999);
             dung->getPlayer()->HP(999);
         }
-        else if(cmd == 'inventory')
+        else if(cmd == "inventory")
         {
             dung->getPlayer()->CurrentInventory();
         }
@@ -158,13 +166,9 @@ void Game::look()
     cout << endl;
 }
 
-void Game::grab()
+void Game::grab(string itemname)
 {
-    string itemname;
-    cout << "What item would you like to take? ";
     //Will need updates to work with the parser
-    getline(cin,itemname);
-    getline(cin,itemname);
     Item temp = dung->getCurrentRoom()->TakeFrom(itemname);
     if(temp == "Error")
         cout << "That is not a recognized item... Try again.";

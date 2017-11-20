@@ -23,7 +23,7 @@ class Game {
 		//Combat routine
 		void combat(char direction, bool& flag);
 		void look();
-		void grab();
+		void grab(string itemname);
 
 };
 #endif
