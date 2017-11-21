@@ -67,7 +67,7 @@ Enemy* Enemy::createEnemy(int type)
 	else if(type == 13)
 		return new StJohn(50,50,40,"\"By the light of Lord Money I consign thine one soul to the many pits of the inferno.\" A woman wearing cleric's vestments says, striding towards you with a mace held high.","\"Why? Why must I lose?! Was my devotion to Money not great enough?!\" St. John cries as she falls, mace clattering to the floor.","Cleric St. John");
 	else if(type == 14)
-		return new Tanner(0,0,0,"\"Well, well, well, what have we here. Looks like someone's face needs a little remodeling!\" A rugged man wielding an enourmous hammer says animatedly, stepping towards you.","Tanner drops his hammer to the floor, creating a huge crater where it landed. He falls next to it and goes still. You notice the words \"I love HCI\" are engraved on his hammer. What does that even mean?","Blacksmith Rich Tanner");
+		return new Tanner(50,50,50,"\"Well, well, well, what have we here. Looks like someone's face needs a little remodeling!\" A rugged man wielding an enourmous hammer says animatedly, stepping towards you.","Tanner drops his hammer to the floor, creating a huge crater where it landed. He falls next to it and goes still. You notice the words \"I love HCI\" are engraved on his hammer. What does that even mean?","Blacksmith Rich Tanner");
 	else if(type == 15)
 		return new Burton(0,0,0,"","","Engineer Burton");
 	

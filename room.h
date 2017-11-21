@@ -3,6 +3,7 @@
 #include "character.h"
 #include "enemy.h"
 #include "item.h"
+#include "curio.h"
 
 class Room{
 	private:
@@ -27,7 +28,7 @@ class Room{
 		void description(string desc);
 
 		void AddToFloor(Item ttt);
-		Item TakeFrom();
+		Item TakeFrom(string compare);
 
 		Curio* LookAtCurio() const;
 		void ChangeCurio(Curio* input);
@@ -35,6 +36,13 @@ class Room{
 		Enemy* CurrentEnemy() const;
 		void ChangeEnemy(Enemy* input);
 
+		void DescribeItems();
+		int NumItems();
 
+		class Error {
+			public:
+                std::string desc;
+				Error(std::string description) : desc(description) {}
+		};
 };
 #endif

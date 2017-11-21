@@ -1,5 +1,7 @@
 
 #include "character.h"
+#include <list>
+#include <algorithm>
 using namespace std;
 //setters and getters for the things
 int Character::ATK() const
@@ -45,4 +47,19 @@ void Character::Score(int input)
 void Character::AddToInventory(Item push)
 {
 	inventory.push_back(push);
+}
+
+void DisplayItemCharacter(Item it)
+{
+	cout << it.Name() << " ";
+}
+
+void Character::CurrentInventory()
+{
+	for_each(inventory.begin(),inventory.end(), DisplayItemCharacter);
+}
+
+int Character::InventorySize()
+{
+	return inventory.size();
 }
