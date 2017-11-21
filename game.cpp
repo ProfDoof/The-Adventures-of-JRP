@@ -153,6 +153,8 @@ void Game::combat(char direction, bool& flag)
             }
             dung->getPlayer()->HP(playerHp - (modenemydmg));
             dung->getCurrentRoom()->CurrentEnemy()->HP(enemyHp - (modplayerdmg));
+            cout << "You have " << dung->getPlayer()->HP() << " HP remaining.\n";
+            cout << "The enemy has " << dung->getCurrentRoom()->CurrentEnemy()->HP() << " HP remaining.\n";
               
         }    
         else if(choice == "run")
