@@ -57,7 +57,6 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Map[2][9]->AddToFloor(Helm);
 	//Row 3
 	Map[3][0] = new Room(0,"Hallway","You are in a squalid and grimy room. One wall has a set of iron bars with a door set in them. You recognize this room as your cell, the place that you're confined when not being forced to work. There is a straw mat in the corner. There are doors to the North, East, and South.");
-	Map[3][0]->AddToFloor(BArmor);
 	Map[3][1] = new Room(0,"Hallway","You are in a hallway in the lower dungeon. There are some rats scurrying about, but nothing of note catches your eye. There are exits to the East and West.");
 	Map[3][2] = new Room(0,"Hallway","You are in a hallway in the lower dungeon. It is utterly unremarkable in all regards, except for the old sword lying by one of the cells. There are doors to the East and West."); ///Sword
 	Item RSword("Rusty Sword","Old and worn, don\'t expect to kill much with this. Adds 10 to attack.", 10,0,0);
