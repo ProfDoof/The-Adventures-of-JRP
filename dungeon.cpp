@@ -30,7 +30,7 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Item StSword("Steel Sword","A hefty and well made sword forged of high quality steel. Provides 25 attack", 25,0,0);
 	Map[0][3]->AddToFloor(StSword);
 	Map[0][4] = new Room(0,"Storage Room","You are in a small storage room tucked in the side of the hallway. There are some cleaning supplies lying about in the close, but one looks kind of off to you. There's a bottle of red liquid that looks like it was made for drinking. The exit back to the hallway is to the South."); //Health Potion
-	Item HPot("Health Potion","A red concoction that restores vitality. Will restore 50 HP.", 0,50,0);
+	Item HPot("Health Potion","A red concoction that restores vitality. Will restore 50 HP.", 0,60,0);
 	Map[0][4]->AddToFloor(HPot);
 	Map[0][6] = new Room(10,"The Slave Master's Bedroom","You are in a rather opulent room with a high roof and fancy decorations. The bed is large and imperial, adorned with silken sheets and velvet drapery. A large dresser with a mirror of gold sits in the corner. There is a door to the South."); //Pendant(Increases DEF)
 	Item Pend("Pendant","A small pendant that seems unremarkable at a glance, but contains great power. Grants a small defensive boost to the wearer.", 0,0,10);
@@ -62,12 +62,12 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Item RSword("Rusty Sword","Old and worn, don\'t expect to kill much with this. Adds 10 to attack.", 10,0,0);
 	Map[3][2]->AddToFloor(RSword);
 	Map[3][3] = new Room(8,"Hallway","You are in a hallway in the upper dungeon. It is fairly plain, though there is one cell near the northern end of the hallway. You can see part of a food tray sticking out from under the cell door. There are doors to the North, East, and West."); //Apple
-	Item App1("Apple","A fresh and juicy apple, should be sufficient to deter any PhD holders in the area.", 0,20,0);
+	Item App1("Apple","A fresh and juicy apple, should be sufficient to deter any PhD holders in the area.", 0,30,0);
 	Map[3][3]->AddToFloor(App1);
 	Map[3][4] = new Room(0,"Hallway","You are in a hallway leading to the castle. It has a high ceiling and some tapestries depicting some generic scenes adorning the walls. There are doors to the East and West.");
 	Map[3][5] = new Room(0,"Hallway","You are in a hallway in the castle. It is well lit and seems to be leading somewhere important. Just a hunch though. There are doors to the East, West, and South.");
 	Map[3][6] = new Room(0,"Hallway","You are in a long hallway with a long table covered with a cloth. You notice that one of the trays on the table still has an apple on it. There are doors to the East and West."); //Apple
-	Item App2("Apple","A nice and tasty apple. You love the taste of these things almost as much as you love HCI.", 0,20,0);
+	Item App2("Apple","A nice and tasty apple. You love the taste of these things almost as much as you love HCI.", 0,30,0);
 	Map[3][6]->AddToFloor(App2);
 	Map[3][7] = new Room(0,"Hallway","You are in a hallway in the castle. It has doors at the East and West ends. A chandelier hangs from the ceiling. There seems to be something stuck to it, but you can't tell what.");
 	Map[3][8] = new Room(8,"Hallway","You are in a hallway. It has doors at the North, South, and West ends. Two torches burn brightly.");
