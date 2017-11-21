@@ -39,12 +39,13 @@ void Game::run()
         toLower(cmd);
         if(cmd == "help")
             cout << "You can look around the room with the command \"Look\". \n"
+                << "If there are items in the room, you may get a list of them with \"Look\".\n"
+                << "You may look at your inventory with the command \"Inventory\""
                 << "You can move North, South, East, or West with the command \"Move\", then the direction: \"North\", \"South\", \"East\", or \"West\". This will of course not work if there is no door that direction. \n"
                 //<< "If there is a curio in the room, you can examine it with \"c\" \n"
                 << "If there is a monster in the room, you can run away with \"Run\" or attack with \"Attack\". \n"
                 << "If you wish to see your current stats you can use the command \"Stats\"\n"
-                << "If you want to exit the game you can do so with the command \"Exit\"\n"
-                << "If there are items in the room, you may get a list of them with \"Look\".\n";
+                << "If you want to exit the game you can do so with the command \"Exit\"\n";
         else if(cmd == "move")       
         {
             ss >> action;
@@ -86,6 +87,7 @@ void Game::run()
         else if(cmd == "inventory")
         {
             dung->getPlayer()->CurrentInventory();
+            cout << endl;
         }
         else if(cmd == "exit")
         {    
