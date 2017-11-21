@@ -76,6 +76,7 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Map[4][5] = new Room(4,"Hallway","You are in a hallway. It has doors at the North and South ends.");
 	Map[4][8] = new Room(0,"Hallway","You are in a hallway in the upper dungeon. There is nothing of note here. There are doors to the North, East, and South.");
 	Map[4][9] = new Room(12,"Lab","You are in what appears to be an alchemist's workshop. There are potiont of various make and effect lying around. You're not sure what any of them do, and you're not about to just drink some to find out. There is a door leading back out to the West.");
+	Item HPot2("Health Potion","A red concoction that restores vitality. Restores 50 HP.", 0,50,0);
 	//Row 5
 	Map[5][0] = new Room(1,"Hallway","You are in a hallway in the upper dungeon. There is nothing of note here. There are doors to the North and South.");
 	Map[5][2] = new Room(0,"Forge","You are in a large room with a forge set in the side. It doesn't look like anyone has made anything here in a while, however you spy the gleam of metal in the corner of the room. There is a door to the South and a storage closet to the East."); //Armor(Best)
