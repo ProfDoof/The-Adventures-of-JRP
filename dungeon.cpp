@@ -102,6 +102,7 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Map[7][8] = new Room(0,"Hallway","You are in a blindingly bright hallway. You can barely make out a door to the East, one more to the West, and another to the North.");
 	Map[7][9] = new Room(0,"Hallway","You are in a hallway that ends in a dead end wall. By the wall, sits an old skeleton, hand still grasping a nice looking sword. There is a door back to the West."); //Sword
 	Item SSword("Silver Sword","A fine blade forged of alchemical silver that will never dull or rust. Can cut through any opposition. Grants 40 attack.", 40,0,0);
+	Map[7][9]->AddToFloor(SSword);
 }
 
 void Dungeon::move(char direction)
