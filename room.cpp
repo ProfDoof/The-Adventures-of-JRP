@@ -50,7 +50,6 @@ void Room::AddToFloor(Item ttt)
 	LooseItems.push_back(ttt);
 }
 
-
 Item Room::TakeFrom(string compare)
 {
 	//How do I do this?

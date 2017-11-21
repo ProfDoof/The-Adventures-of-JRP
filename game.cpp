@@ -30,29 +30,27 @@ void Game::run()
     string action;
     bool flag = true;
     while(flag) {
-        cout << "What do you do? Enter \"?\" for a list of commands: ";
+        cout << "What do you do? Enter \"Help\" for a list of commands: ";
         getline(cin,input);
         stringstream ss;
         ss << input;
         ss >> cmd;
         cout << "\n";
         toLower(cmd);
-        if(cmd == "?")
+        if(cmd == "help")
             cout << "You can look around the room with the command \"Look\". \n"
-                << "You can move North, South, East, or West with the command Move, then the direction: \"North\", \"South\", \"East\", or \"West\". This will of course not work if there is no door that direction. \n"
+                << "You can move North, South, East, or West with the command \"Move\", then the direction: \"North\", \"South\", \"East\", or \"West\". This will of course not work if there is no door that direction. \n"
                 //<< "If there is a curio in the room, you can examine it with \"c\" \n"
                 << "If there is a monster in the room, you can run away with \"Run\" or attack with \"Attack\". \n"
                 << "If you wish to see your current stats you can use the command \"Stats\"\n"
-                << "If you want to exit the game you can do so with the command \"Exit\"\n";
-                //<< "If there are items in the room, you may get a list of them with \"i\" and look at them closer with the number of the item in the room, for example \"1\" or \"5\".";
+                << "If you want to exit the game you can do so with the command \"Exit\"\n"
+                << "If there are items in the room, you may get a list of them with \"Look\".\n";
         else if(cmd == "move")       
         {
             ss >> action;
             toLower(action);
             dung->move(action[0]);
             cout << dung->getCurrentRoom()->description() << endl;
-            cout << "Here is a list of the items in the room: ";
-            dung->getCurrentRoom()->DescribeItems();
             cout << endl;
             if(dung->getCurrentRoom()->CurrentEnemy())
             {
