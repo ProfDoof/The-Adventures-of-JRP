@@ -51,7 +51,7 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Item Dag("Dagger","A small iron dagger. Makes you feel a little safer.", 5,0,0);
 	Map[2][0]->AddToFloor(Dag);
 	Map[2][3] = new Room(0,"Hallway","You are in a fairly unremarkable hallway in the lower dungeon. There are torches on both walls and you can see doors at the North and South ends of the hallway.");
-	Map[2][8] = new Room(0,"Hallway","You are in an opulent hallway with a gold adorned door at the end. You suspect that Duke Byrd lies beyond it, waiting for you. Before crossing the threshold, you take a moment to prepare yourself. The door is to the North, the way back is to the South.");
+	Map[2][8] = new Room(0,"Hallway","You are in an opulent hallway with a gold adorned door at the end. You suspect that Duke Byrd lies beyond it, waiting for you. Before crossing the threshold, you take a moment to prepare yourself. The door is to the North, the way back is to the South and there is another door to the East.");
 	Map[2][9] = new Room(11,"Guard Post","You are in an empty guard post. There are signs of recent activity, namely a half-eaten sandwich and a few open cabinets. On the table sits a guard helmet in good condition."); //Helmet
 	Item Helm("Helmet","A sturdy closed face helmet. It'll protect your important head bits, but the rest of your bits are up to you.", 0,0,10);
 	Map[2][9]->AddToFloor(Helm);
@@ -94,7 +94,7 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	//Row 7
 	Map[7][0] = new Room(0,"Hallway","You are in a hallway. There is a large door set in the wall to the West. It is locked. There are doors to the North and East.");
 	Map[7][1] = new Room(1,"Hallway","You are in a hallway. The hallway fills you with hope and determination. Or maybe its just dust. Probably dust. There are doors to the East and West.");
-	Map[7][2] = new Room(0,"Hallway","You are in a hallway. The hallway looks just like the previous hallway except there is a dead rat in this one. Marvelous. There are doors to the East and West.");
+	Map[7][2] = new Room(0,"Hallway","You are in a hallway. The hallway looks just like the previous hallway except there is a dead rat in this one. Marvelous. There are doors to the North, East, and West.");
 	Map[7][3] = new Room(0,"Hallway","You are in a hallway. A sense of dread fills you when you look at this hallway. It is just as boring as the previous one. Imagine that. There are doors leading to the East and West.");
 	Map[7][4] = new Room(0,"Hallway","You are in a normal hallway. There is a broken cell door on the floor here. There are doors to the East and West.");
 	Map[7][5] = new Room(13,"Hallway","You are in a small hallway. It is uncomfortable to walk through, your shoulders scraping the sides if you aren't careful. There are doors to the North, East, and West.");
