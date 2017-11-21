@@ -134,22 +134,24 @@ void Game::combat(char direction, bool& flag)
             playerDef = dung->getPlayer()->DEF();
             enemyHp = dung->getCurrentRoom()->CurrentEnemy()->HP();
             playerHp = dung->getPlayer()->HP();
-            if((playerAtk - enemyDef) >= enemyHp)
+            int modenemydmg = (enemyAtk - playerDef < 0 ? 1 : enemyAtk - playerDef);
+            int modplayerdmg = (playerAtk - enemyDef < 0 ? 1 : playerAtk - enemyDef);
+            if((modplayerdmg) >= enemyHp)
             {
                 cout << "Congratulations, you have defeated " << dung->getCurrentRoom()->CurrentEnemy()->EnemyName() << endl;
                 dung->getCurrentRoom()->ChangeEnemy(NULL);
                 break;
             }
-            cout << "You have done " << playerAtk - enemyDef << " damage.\n" << "The enemy has done " << enemyAtk - playerDef<< " damage." << endl;
-            if(playerHp <= (enemyAtk - playerDef))
+            cout << "You have done " << modplayerdmg << " damage.\n" << "The enemy has done " << modenemydmg << " damage." << endl;
+            if(playerHp <= (modenemydmg))
             {
                 cout << "You have died." << endl;
                 cout << "Look, just try again... maybe, you'll succeed this time." << endl;
                 flag = false;
                 break;
             }
-            dung->getPlayer()->HP(playerHp - (enemyAtk - playerDef));
-            dung->getCurrentRoom()->CurrentEnemy()->HP(enemyHp - (playerAtk - enemyDef));
+            dung->getPlayer()->HP(playerHp - (modenemydmg));
+            dung->getCurrentRoom()->CurrentEnemy()->HP(enemyHp - (modplayerdmg));
               
         }    
         else if(choice == "run")

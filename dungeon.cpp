@@ -23,7 +23,9 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Map[0][0] = new Room(0,"Storage Room","You are in a large storage room at the end of a hallway. There are some miscellaneous supplies lying around, but none seem pertinent to your quest. A broom leans against the wall next to a box. Inside the box is a number of feather dusters but you think there might be something underneath them. You think this may just be a broom closet. There is a door to the South, the one you came through."); //Armor
 	Item BArmor("Leather Armor","Armor made of cured leather. Tough, but not likely to stay that way for more than a few hits. Increases defense by 10", 0,0,10);
 	Map[0][0]->AddToFloor(BArmor);
-	Map[0][2] = new Room(4,"Common Bedroom","You are in a common bedroom. It is fairly unremarkable, a small bed sits in the corner. A dresser and a wardrobe are on the opposite side of the room. There is a door leading South back to the hallway."); 
+	Map[0][2] = new Room(0,"Common Bedroom","You are in a common bedroom. It is fairly unremarkable, a small bed sits in the corner. A dresser and a wardrobe are on the opposite side of the room. There is a door leading South back to the hallway."); 
+	Curio* temp = new Curio("Lockbox","This lockbox has a metal lock on it that seems like it could be opened by some kind of key.", "Bronze Key", "Inside the lockbox you find a note from Slave Master Homer saying \"Stop leaving your key down in my Dungeon, next time I won't return it\"");
+	Map[0][2]->ChangeCurio(temp);
 	Map[0][3] = new Room(0,"Meeting Room","You are in a large room with a table in the middle surrounded by chairs. It looks to have been a meeting room of some sort. There is a shelf with some papers on it. On closer inspection they appear to be old documents pertaining to business carried out by the castle. Nothing important to you. Lying on the table however, is a nice looking sword. There is a door leading back South."); //Sword
 	Item StSword("Steel Sword","A hefty and well made sword forged of high quality steel. Provides 25 attack", 25,0,0);
 	Map[0][3]->AddToFloor(StSword);
