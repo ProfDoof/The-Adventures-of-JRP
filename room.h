@@ -3,6 +3,7 @@
 #include "character.h"
 #include "enemy.h"
 #include "item.h"
+#include "curio.h"
 
 class Room{
 	private:

@@ -24,6 +24,7 @@ class Game {
 		void combat(char direction, bool& flag);
 		void look();
 		void grab(string itemname);
+		void puzzle(char direction);
 
 };
 #endif

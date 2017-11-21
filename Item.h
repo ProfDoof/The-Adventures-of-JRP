@@ -28,17 +28,8 @@ class Item {
 		int Healing() const { return _Healing; }
 		void Defense(int D) { _Defense = D; }
 		int Defense() const { return _Defense; }
-		class Error {
-			private:
-                std::string desc;
-			public:
-				Error(std::string description) : desc(description) {}
-		};
 };
 
 
-class Curio {
-	private:
-		int something;
-};
+
 #endif

@@ -2,6 +2,7 @@
 #include "enemy.h"
 #include "character.h"
 #include "item.h"
+#include "curio.h"
 #include <string>
 #include <list>
 #include <algorithm>

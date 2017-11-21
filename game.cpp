@@ -40,7 +40,7 @@ void Game::run()
         if(cmd == "help")
             cout << "You can look around the room with the command \"Look\". \n"
                 << "If there are items in the room, you may get a list of them with \"Look\".\n"
-                << "You may look at your inventory with the command \"Inventory\""
+                << "You may look at the items you have collected with the command \"Inventory\"\n"
                 << "You can move North, South, East, or West with the command \"Move\", then the direction: \"North\", \"South\", \"East\", or \"West\". This will of course not work if there is no door that direction. \n"
                 //<< "If there is a curio in the room, you can examine it with \"c\" \n"
                 << "If there is a monster in the room, you can run away with \"Run\" or attack with \"Attack\". \n"
@@ -53,6 +53,10 @@ void Game::run()
             dung->move(action[0]);
             cout << dung->getCurrentRoom()->description() << endl;
             cout << endl;
+            if(dung->getCurrentRoom()->LookAtCurio())
+            {
+                puzzle(action[0]);
+            } 
             if(dung->getCurrentRoom()->CurrentEnemy())
             {
                 cout << "You have been attacked by " << dung->getCurrentRoom()->CurrentEnemy()->EnemyName() << endl;
@@ -206,5 +210,46 @@ void Game::grab(string itemname)
         }
 
 
+    }
+}
+
+void Game::puzzle(char direction)
+{
+    stringstream ss;
+    string decision;
+    cout << "This room has a puzzle in it. Because of this you may only try to solve the puzzle or leave this room. You can leave with \"Leave\" or you can use an item to solve the puzzle with \"Use\" and the name of the Item you'd like to use." << endl;
+    getline(cin, decision);
+    ss << decision;
+    decision = "";
+    ss >> decision;
+    if(toLower(decision) == "leave")
+    {
+        if(direction == 'n')
+            dung->TBI(1);
+        else if(direction == 's')
+            dung->TBI(-1);
+        else if(direction == 'e')
+            dung->LRI(-1);
+        else if(direction == 'w')
+            dung->LRI(1);
+        
+        return;
+    }
+    else if(toLower(decision) == "use")
+    {
+        string placer;
+        string itemname;
+        ss >> itemname;
+        while(ss >> placer)
+        {
+            itemname += " " + placer;
+        }
+        string ItemUse = dung->getCurrentRoom()->LookAtCurio()->ItemUsed();
+        if(toLower(itemname) == toLower(ItemUse))
+        {
+            cout << "Congratulations, this curio has been solved." << endl;
+            cout << dung->getCurrentRoom()->LookAtCurio()->ComDesc() << endl;
+            dung->getCurrentRoom()->ChangeCurio(NULL);
+        }
     }
 }
