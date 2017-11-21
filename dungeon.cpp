@@ -35,6 +35,8 @@ Dungeon::Dungeon() : northSouthIndex(3), eastWestIndex(0)
 	Map[0][6]->AddToFloor(Pend);
 	//Row 1
 	Map[1][0] = new Room(9,"Hallway","You are in a fairly unremarkable hallway in the lower dungeon. There are torches on both walls and you can see doors to the North, East, and South."); 
+	Item BKey("Bronze Key","A key fashioned of bronze. Wonder what it opens?", 0,0,0);
+	Map[1][0]->AddToFloor(BKey);
 	Map[1][1] = new Room(0,"Hallway","You are in a well lit hallway in the upper dungeon. You are flanked by a number of cells on either side, all locked. The cells seem far better furnished and supplied than your own, perhaps this is where political prisoners were held? At the end of the hall you can see a door. There are exits to the East, and West."); 
 	Map[1][2] = new Room(1,"Hallway","You are in a dark hallway. You cannot see what is in front of you.");
 	Map[1][3] = new Room(0,"Hallway","You are in a hallway. There is nothing remarkable about this particular hallway, it looks like the others that you've been in. There are doors to the North, East, South, and West.");
