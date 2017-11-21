@@ -106,20 +106,28 @@ void Game::end()
 void Game::combat(char direction, bool& flag)
 {
     string choice;
+    int enemyAtk = dung->getCurrentRoom()->CurrentEnemy()->ATK();
+    int playerAtk = dung->getPlayer()->ATK();
+    int enemyDef = dung->getCurrentRoom()->CurrentEnemy()->DEF();
+    int playerDef = dung->getPlayer()->DEF();
+    int enemyHp = dung->getCurrentRoom()->CurrentEnemy()->HP();
+    int playerHp = dung->getPlayer()->HP();
     cout << dung->getCurrentRoom()->CurrentEnemy()->EncounterLine() << endl;
-    cout << "You are now in combat, you can either run or attack" << endl;
+    cout << "Your current stats are Health: " << playerHp << " Attack: " << playerAtk << " Defense: " << playerDef << endl;
+    cout << "Your enemy's stats are Health: " << enemyHp << " Attack: " << enemyAtk << " Defense: " << enemyDef << endl;
+    cout << "You are now in combat, you can either \"Run\" or \"Attack\"" << endl;
     getline(cin,choice);
     toLower(choice);
     while(true)
     {    
         if(choice == "attack")
         {
-            int enemyAtk = dung->getCurrentRoom()->CurrentEnemy()->ATK();
-            int playerAtk = dung->getPlayer()->ATK();
-            int enemyDef = dung->getCurrentRoom()->CurrentEnemy()->DEF();
-            int playerDef = dung->getPlayer()->DEF();
-            int enemyHp = dung->getCurrentRoom()->CurrentEnemy()->HP();
-            int playerHp = dung->getPlayer()->HP();
+            enemyAtk = dung->getCurrentRoom()->CurrentEnemy()->ATK();
+            playerAtk = dung->getPlayer()->ATK();
+            enemyDef = dung->getCurrentRoom()->CurrentEnemy()->DEF();
+            playerDef = dung->getPlayer()->DEF();
+            enemyHp = dung->getCurrentRoom()->CurrentEnemy()->HP();
+            playerHp = dung->getPlayer()->HP();
             if((playerAtk - enemyDef) >= enemyHp)
             {
                 cout << "Congratulations, you have defeated " << dung->getCurrentRoom()->CurrentEnemy()->EnemyName() << endl;
@@ -150,9 +158,12 @@ void Game::combat(char direction, bool& flag)
             else if(direction == 'w')
                 dung->LRI(1);
             
-            break;
+            return;
         }
-        cin >> choice;
+        else
+            cout << "Invalid Input" << endl;
+        getline(cin,choice);
+        toLower(choice);
     }  
 }
 
