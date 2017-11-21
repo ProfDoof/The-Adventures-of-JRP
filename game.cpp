@@ -40,7 +40,7 @@ void Game::run()
         if(cmd == "help")
             cout << "You can look around the room with the command \"Look\". \n"
                 << "If there are items in the room, you may get a list of them with \"Look\".\n"
-                << "You may pick up items in the room with the command \"Take\" and then the name of the item."
+                << "You may pick up items in the room with the command \"Take\" and then the name of the item.\n"
                 << "You may look at the items you have collected with the command \"Inventory\"\n"
                 << "You can move North, South, East, or West with the command \"Move\", then the direction: \"North\", \"South\", \"East\", or \"West\". This will of course not work if there is no door that direction. \n"
                 //<< "If there is a curio in the room, you can examine it with \"c\" \n"
