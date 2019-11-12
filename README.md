@@ -4,7 +4,7 @@ A text adventure created for a our Object Oriented Programming Class
 demo.txt
 
 To compile you will need to type 
-g++ -Wall -std=gnu++0x *.cpp -o adventure
+'g++ -Wall -std=gnu++0x *.cpp -o adventure'
 into the terminal while in the folder.
 If you have any problems with compilation please email me
 at jmm15f@acu.edu
