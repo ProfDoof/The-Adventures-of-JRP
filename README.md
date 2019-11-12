@@ -5,7 +5,7 @@ demo.txt
 
 To compile you will need to type 
 g++ -Wall -std=gnu++0x *.cpp -o adventure
-into the terminal while in the file location.
+into the terminal while in the folder.
 If you have any problems with compilation please email me
 at jmm15f@acu.edu
 
