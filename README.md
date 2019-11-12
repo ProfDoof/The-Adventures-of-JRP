@@ -10,16 +10,27 @@ If you have any problems with compilation please email me
 at jmm15f@acu.edu
 
 Move Functionality Finished Check
+
 Combat Functionality Finished Check
+
 Look Functionality Finished Check
+
 Debug Mode Finished 
+
 View Current Stats Finished  Check
+
 Map Finished Check
+
 Dungeon Finished Check
+
 Room Finished Check
+
 Items Finished Check
+
 Stat-Altering through Items Finished Check
+
 Curios Finished
+
 Added Parser Finished Check
 
 
